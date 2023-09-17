@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
-
+from waitress import serve
+    
 app = Flask(__name__)
 
 
@@ -18,3 +19,6 @@ def page_2():
     ad = request.args.get("ad")
     soyad = request.args.get("soyad")
     return render_template("page_2.html", ad=ad, soyad=soyad)	
+
+if __name__ == "__main__":
+    serve(app, host="0.0.0.0", port=8080)
