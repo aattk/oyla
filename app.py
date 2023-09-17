@@ -13,7 +13,7 @@ def hello():
         soyad = request.form["soyad"]
         if request.form["button"] == "Go to page 2":
             return redirect(url_for("page_2", ad=ad, soyad=soyad))
-    return render_template("index.html")
+    return render_template("index.html",a1= "55", a2="66",  a3="77",    a4="88" )
 
 
 @app.route("/page_2" , methods=["GET"])
