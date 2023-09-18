@@ -1,0 +1,12 @@
+[Unit]
+Description=Oyla by aattk
+After=network.target 
+[Service] 
+Environment="PATH=/home/aattk/oyla/server/venv/bin"
+ExecStart=python -u app.py 
+WorkingDirectory=/home/aattk/oyla
+StandardOutput=inherit 
+StandardError=inherit 
+Restart=always 
+[Install] 
+WantedBy=multi-user.target
